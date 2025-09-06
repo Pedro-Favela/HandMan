@@ -1,0 +1,73 @@
+[gd_scene load_steps=7 format=3 uid="uid://cbuosfw4eydf5"]
+
+[ext_resource type="Script" path="res://Scripts/global.gd" id="1_5kmyl"]
+[ext_resource type="AudioStream" uid="uid://drfnulpp461et" path="res://Assets/Audio/AmbientSound.wav" id="2_hcpgr"]
+[ext_resource type="AudioStream" uid="uid://ifeqc4x0f0f2" path="res://Assets/Audio/Breathing.wav" id="3_xq2ge"]
+[ext_resource type="AudioStream" uid="uid://d0afoid1bqt3v" path="res://Assets/Audio/MenuSound.wav" id="4_plifc"]
+
+[sub_resource type="Animation" id="Animation_d5gg4"]
+resource_name = "BackgroundNoise"
+length = 13.5
+loop_mode = 1
+tracks/0/type = "audio"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("2_hcpgr")
+}, {
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("2_hcpgr")
+}, {
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("2_hcpgr")
+}, {
+"end_offset": 1.547,
+"start_offset": 0.0,
+"stream": ExtResource("2_hcpgr")
+}],
+"times": PackedFloat32Array(0.0333333, 3.83333, 7.3, 11.2)
+}
+tracks/0/use_blend = true
+tracks/1/type = "audio"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("3_xq2ge")
+}],
+"times": PackedFloat32Array(0)
+}
+tracks/1/use_blend = true
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_4pl6a"]
+_data = {
+"BackgroundNoise": SubResource("Animation_d5gg4")
+}
+
+[node name="Global" type="Node2D"]
+script = ExtResource("1_5kmyl")
+
+[node name="BackgroundSound" type="AudioStreamPlayer" parent="."]
+bus = &"BackgroundNoise"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="BackgroundSound"]
+libraries = {
+"": SubResource("AnimationLibrary_4pl6a")
+}
+autoplay = "BackgroundNoise"
+
+[node name="SoundFX" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_plifc")

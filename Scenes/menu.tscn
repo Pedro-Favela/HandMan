@@ -1,0 +1,47 @@
+[gd_scene load_steps=4 format=3 uid="uid://bjbkyiwww2crb"]
+
+[ext_resource type="Theme" uid="uid://7nmkpj0rkrw5" path="res://Assets/MainTheme.tres" id="1_fe1gi"]
+[ext_resource type="Script" path="res://Scripts/menu.gd" id="1_xghdp"]
+[ext_resource type="Texture2D" uid="uid://dou8gwsruwo7" path="res://Assets/hand.png" id="3_pfcnc"]
+
+[node name="Menu" type="Node2D"]
+script = ExtResource("1_xghdp")
+
+[node name="Buttons" type="VBoxContainer" parent="."]
+offset_left = 459.0
+offset_top = 465.0
+offset_right = 532.0
+offset_bottom = 641.0
+
+[node name="Play" type="Button" parent="Buttons"]
+layout_mode = 2
+mouse_filter = 2
+theme = ExtResource("1_fe1gi")
+text = "JOGAR"
+
+[node name="Options" type="Button" parent="Buttons"]
+layout_mode = 2
+mouse_filter = 2
+theme = ExtResource("1_fe1gi")
+text = "OPÇÕES"
+
+[node name="Credits" type="Button" parent="Buttons"]
+layout_mode = 2
+mouse_filter = 2
+theme = ExtResource("1_fe1gi")
+text = "CREDITOS"
+
+[node name="Quit" type="Button" parent="Buttons"]
+layout_mode = 2
+mouse_filter = 2
+theme = ExtResource("1_fe1gi")
+text = "SAIR
+"
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+modulate = Color(0.3, 0.185, 0, 0.0235294)
+position = Vector2(513, 510)
+scale = Vector2(10.1953, 10.1953)
+texture = ExtResource("3_pfcnc")
+hframes = 6
+frame = 5

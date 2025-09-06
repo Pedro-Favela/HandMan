@@ -1,0 +1,700 @@
+[gd_scene load_steps=44 format=3 uid="uid://c8cg623mhqi0"]
+
+[ext_resource type="Script" path="res://Scripts/main.gd" id="1_vqd2f"]
+[ext_resource type="Theme" uid="uid://7nmkpj0rkrw5" path="res://Assets/MainTheme.tres" id="2_0hg1y"]
+[ext_resource type="FontFile" uid="uid://bdgseehtscjxr" path="res://Assets/ari_w9500/ari-w9500-bold.ttf" id="3_1fdxy"]
+[ext_resource type="Texture2D" uid="uid://dou8gwsruwo7" path="res://Assets/hand.png" id="4_nkc6w"]
+[ext_resource type="Script" path="res://Scripts/hand.gd" id="5_rjpcq"]
+[ext_resource type="AudioStream" uid="uid://bdkpu4x1gnurq" path="res://Assets/Audio/Alphabet.wav" id="6_auce0"]
+[ext_resource type="AudioStream" uid="uid://b5av76gvu7vau" path="res://Assets/Audio/AreYouSure.wav" id="7_4r8ef"]
+[ext_resource type="AudioStream" uid="uid://cd2dbwbmjr17h" path="res://Assets/Audio/Wrong.wav" id="7_ovyf6"]
+[ext_resource type="AudioStream" uid="uid://b8tjbeteaky4f" path="res://Assets/Audio/Death.wav" id="8_nllgv"]
+[ext_resource type="AudioStream" uid="uid://tj1qfswcq54p" path="res://Assets/Audio/RepeatedLetter.wav" id="9_xyrmn"]
+
+[sub_resource type="FontVariation" id="FontVariation_q2o7f"]
+base_font = ExtResource("3_1fdxy")
+spacing_glyph = 7
+
+[sub_resource type="Animation" id="Animation_shs37"]
+resource_name = "A"
+length = 0.25
+tracks/0/type = "audio"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Alphabet")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"clips": [{
+"end_offset": 12.4,
+"start_offset": 0.0,
+"stream": ExtResource("6_auce0")
+}],
+"times": PackedFloat32Array(0.0333333)
+}
+tracks/0/use_blend = true
+
+[sub_resource type="Animation" id="Animation_viahg"]
+resource_name = "AreYouSure"
+length = 1.5
+tracks/0/type = "audio"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("SoundFx")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("7_4r8ef")
+}],
+"times": PackedFloat32Array(0.0333333)
+}
+tracks/0/use_blend = true
+
+[sub_resource type="Animation" id="Animation_8042g"]
+resource_name = "B"
+length = 0.4
+tracks/0/type = "audio"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Alphabet")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"clips": [{
+"end_offset": 12.046,
+"start_offset": 0.192,
+"stream": ExtResource("6_auce0")
+}],
+"times": PackedFloat32Array(0)
+}
+tracks/0/use_blend = true
+
+[sub_resource type="Animation" id="Animation_igglb"]
+resource_name = "C"
+length = 0.5
+tracks/0/type = "audio"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Alphabet")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"clips": [{
+"end_offset": 11.571,
+"start_offset": 0.5685,
+"stream": ExtResource("6_auce0")
+}],
+"times": PackedFloat32Array(0)
+}
+tracks/0/use_blend = true
+
+[sub_resource type="Animation" id="Animation_db8nx"]
+resource_name = "D"
+length = 0.4
+tracks/0/type = "audio"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Alphabet")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"clips": [{
+"end_offset": 11.2097,
+"start_offset": 1.0445,
+"stream": ExtResource("6_auce0")
+}],
+"times": PackedFloat32Array(0)
+}
+tracks/0/use_blend = true
+
+[sub_resource type="Animation" id="Animation_qiwqa"]
+resource_name = "E"
+length = 0.4
+tracks/0/type = "audio"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Alphabet")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"clips": [{
+"end_offset": 11.0127,
+"start_offset": 1.3465,
+"stream": ExtResource("6_auce0")
+}],
+"times": PackedFloat32Array(0)
+}
+tracks/0/use_blend = true
+
+[sub_resource type="Animation" id="Animation_7bu3p"]
+resource_name = "F"
+length = 0.4
+tracks/0/type = "audio"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Alphabet")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"clips": [{
+"end_offset": 10.6567,
+"start_offset": 1.595,
+"stream": ExtResource("6_auce0")
+}],
+"times": PackedFloat32Array(0)
+}
+tracks/0/use_blend = true
+
+[sub_resource type="Animation" id="Animation_44s8d"]
+resource_name = "G"
+length = 0.4
+tracks/0/type = "audio"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Alphabet")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"clips": [{
+"end_offset": 10.1872,
+"start_offset": 2.098,
+"stream": ExtResource("6_auce0")
+}],
+"times": PackedFloat32Array(0)
+}
+tracks/0/use_blend = true
+
+[sub_resource type="Animation" id="Animation_ear0t"]
+resource_name = "H"
+length = 0.6
+tracks/0/type = "audio"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Alphabet")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"clips": [{
+"end_offset": 9.6872,
+"start_offset": 2.397,
+"stream": ExtResource("6_auce0")
+}],
+"times": PackedFloat32Array(0)
+}
+tracks/0/use_blend = true
+
+[sub_resource type="Animation" id="Animation_bft3o"]
+resource_name = "I"
+length = 0.6
+tracks/0/type = "audio"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Alphabet")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"clips": [{
+"end_offset": 9.2117,
+"start_offset": 2.93,
+"stream": ExtResource("6_auce0")
+}],
+"times": PackedFloat32Array(0)
+}
+tracks/0/use_blend = true
+
+[sub_resource type="Animation" id="Animation_ae0im"]
+resource_name = "J"
+length = 0.6
+tracks/0/type = "audio"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Alphabet")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"clips": [{
+"end_offset": 8.7192,
+"start_offset": 3.4305,
+"stream": ExtResource("6_auce0")
+}],
+"times": PackedFloat32Array(0)
+}
+tracks/0/use_blend = true
+
+[sub_resource type="Animation" id="Animation_o0lb4"]
+resource_name = "K"
+length = 0.6
+tracks/0/type = "audio"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Alphabet")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"clips": [{
+"end_offset": 8.2642,
+"start_offset": 3.9025,
+"stream": ExtResource("6_auce0")
+}],
+"times": PackedFloat32Array(0)
+}
+tracks/0/use_blend = true
+
+[sub_resource type="Animation" id="Animation_0mb5k"]
+resource_name = "L"
+length = 0.6
+tracks/0/type = "audio"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Alphabet")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"clips": [{
+"end_offset": 7.8357,
+"start_offset": 4.335,
+"stream": ExtResource("6_auce0")
+}],
+"times": PackedFloat32Array(0)
+}
+tracks/0/use_blend = true
+
+[sub_resource type="Animation" id="Animation_bn6av"]
+resource_name = "M"
+length = 0.6
+tracks/0/type = "audio"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Alphabet")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"clips": [{
+"end_offset": 7.4077,
+"start_offset": 4.784,
+"stream": ExtResource("6_auce0")
+}],
+"times": PackedFloat32Array(0)
+}
+tracks/0/use_blend = true
+
+[sub_resource type="Animation" id="Animation_ge6wh"]
+resource_name = "N"
+length = 0.6
+tracks/0/type = "audio"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Alphabet")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"clips": [{
+"end_offset": 7.0157,
+"start_offset": 5.235,
+"stream": ExtResource("6_auce0")
+}],
+"times": PackedFloat32Array(0)
+}
+tracks/0/use_blend = true
+
+[sub_resource type="Animation" id="Animation_txri4"]
+resource_name = "O"
+length = 0.6
+tracks/0/type = "audio"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Alphabet")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"clips": [{
+"end_offset": 6.5802,
+"start_offset": 5.596,
+"stream": ExtResource("6_auce0")
+}],
+"times": PackedFloat32Array(0)
+}
+tracks/0/use_blend = true
+
+[sub_resource type="Animation" id="Animation_u4oie"]
+resource_name = "P"
+length = 0.6
+tracks/0/type = "audio"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Alphabet")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"clips": [{
+"end_offset": 6.1867,
+"start_offset": 6.0545,
+"stream": ExtResource("6_auce0")
+}],
+"times": PackedFloat32Array(0)
+}
+tracks/0/use_blend = true
+
+[sub_resource type="Animation" id="Animation_fm2o8"]
+resource_name = "Q"
+length = 0.6
+tracks/0/type = "audio"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Alphabet")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"clips": [{
+"end_offset": 5.7712,
+"start_offset": 6.42,
+"stream": ExtResource("6_auce0")
+}],
+"times": PackedFloat32Array(0)
+}
+tracks/0/use_blend = true
+
+[sub_resource type="Animation" id="Animation_e0y65"]
+resource_name = "R"
+length = 0.6
+tracks/0/type = "audio"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Alphabet")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"clips": [{
+"end_offset": 5.3532,
+"start_offset": 6.8565,
+"stream": ExtResource("6_auce0")
+}],
+"times": PackedFloat32Array(0)
+}
+tracks/0/use_blend = true
+
+[sub_resource type="Animation" id="Animation_2vbym"]
+resource_name = "S"
+length = 0.6
+tracks/0/type = "audio"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Alphabet")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"clips": [{
+"end_offset": 4.8714,
+"start_offset": 7.3005,
+"stream": ExtResource("6_auce0")
+}],
+"times": PackedFloat32Array(0)
+}
+tracks/0/use_blend = true
+
+[sub_resource type="Animation" id="Animation_l85vj"]
+resource_name = "T"
+length = 0.6
+tracks/0/type = "audio"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Alphabet")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"clips": [{
+"end_offset": 4.4624,
+"start_offset": 7.7685,
+"stream": ExtResource("6_auce0")
+}],
+"times": PackedFloat32Array(0)
+}
+tracks/0/use_blend = true
+
+[sub_resource type="Animation" id="Animation_yxafh"]
+resource_name = "U"
+length = 0.6
+tracks/0/type = "audio"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Alphabet")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"clips": [{
+"end_offset": 4.0769,
+"start_offset": 8.118,
+"stream": ExtResource("6_auce0")
+}],
+"times": PackedFloat32Array(0)
+}
+tracks/0/use_blend = true
+
+[sub_resource type="Animation" id="Animation_ng3my"]
+resource_name = "V"
+length = 0.6
+tracks/0/type = "audio"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Alphabet")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"clips": [{
+"end_offset": 3.5569,
+"start_offset": 8.526,
+"stream": ExtResource("6_auce0")
+}],
+"times": PackedFloat32Array(0)
+}
+tracks/0/use_blend = true
+
+[sub_resource type="Animation" id="Animation_270pu"]
+resource_name = "W"
+length = 0.8
+tracks/0/type = "audio"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Alphabet")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"clips": [{
+"end_offset": 2.7994,
+"start_offset": 9.057,
+"stream": ExtResource("6_auce0")
+}],
+"times": PackedFloat32Array(0)
+}
+tracks/0/use_blend = true
+
+[sub_resource type="Animation" id="Animation_ti5qw"]
+resource_name = "X"
+length = 0.8
+tracks/0/type = "audio"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Alphabet")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"clips": [{
+"end_offset": 2.1579,
+"start_offset": 9.8045,
+"stream": ExtResource("6_auce0")
+}],
+"times": PackedFloat32Array(0)
+}
+tracks/0/use_blend = true
+
+[sub_resource type="Animation" id="Animation_irrw1"]
+resource_name = "Y"
+length = 0.6
+tracks/0/type = "audio"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Alphabet")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"clips": [{
+"end_offset": 1.6409,
+"start_offset": 10.4225,
+"stream": ExtResource("6_auce0")
+}],
+"times": PackedFloat32Array(0)
+}
+tracks/0/use_blend = true
+
+[sub_resource type="Animation" id="Animation_uuypf"]
+resource_name = "Z"
+length = 0.6
+tracks/0/type = "audio"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Alphabet")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"clips": [{
+"end_offset": 0.8369,
+"start_offset": 10.9745,
+"stream": ExtResource("6_auce0")
+}],
+"times": PackedFloat32Array(0)
+}
+tracks/0/use_blend = true
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_nn366"]
+_data = {
+"A": SubResource("Animation_shs37"),
+"AreYouSure": SubResource("Animation_viahg"),
+"B": SubResource("Animation_8042g"),
+"C": SubResource("Animation_igglb"),
+"D": SubResource("Animation_db8nx"),
+"E": SubResource("Animation_qiwqa"),
+"F": SubResource("Animation_7bu3p"),
+"G": SubResource("Animation_44s8d"),
+"H": SubResource("Animation_ear0t"),
+"I": SubResource("Animation_bft3o"),
+"J": SubResource("Animation_ae0im"),
+"K": SubResource("Animation_o0lb4"),
+"L": SubResource("Animation_0mb5k"),
+"M": SubResource("Animation_bn6av"),
+"N": SubResource("Animation_ge6wh"),
+"O": SubResource("Animation_txri4"),
+"P": SubResource("Animation_u4oie"),
+"Q": SubResource("Animation_fm2o8"),
+"R": SubResource("Animation_e0y65"),
+"S": SubResource("Animation_2vbym"),
+"T": SubResource("Animation_l85vj"),
+"U": SubResource("Animation_yxafh"),
+"V": SubResource("Animation_ng3my"),
+"W": SubResource("Animation_270pu"),
+"X": SubResource("Animation_ti5qw"),
+"Y": SubResource("Animation_irrw1"),
+"Z": SubResource("Animation_uuypf")
+}
+
+[sub_resource type="Animation" id="Animation_dqsmm"]
+resource_name = "Death"
+length = 4.0
+tracks/0/type = "audio"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("SoundFx")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("8_nllgv")
+}],
+"times": PackedFloat32Array(0)
+}
+tracks/0/use_blend = true
+
+[sub_resource type="Animation" id="Animation_bdtvt"]
+resource_name = "RepeatedLetter"
+length = 0.4
+tracks/0/type = "audio"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("SoundFx")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("9_xyrmn")
+}],
+"times": PackedFloat32Array(0.0333333)
+}
+tracks/0/use_blend = true
+
+[sub_resource type="Animation" id="Animation_c27my"]
+resource_name = "WrongLetter"
+length = 0.3
+tracks/0/type = "audio"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("SoundFx")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("7_ovyf6")
+}],
+"times": PackedFloat32Array(0)
+}
+tracks/0/use_blend = true
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_a48wi"]
+_data = {
+"Death": SubResource("Animation_dqsmm"),
+"RepeatedLetter": SubResource("Animation_bdtvt"),
+"WrongLetter": SubResource("Animation_c27my")
+}
+
+[node name="Main" type="Node2D"]
+script = ExtResource("1_vqd2f")
+
+[node name="Word" type="RichTextLabel" parent="."]
+offset_left = 543.0
+offset_top = 470.0
+offset_right = 1046.0
+offset_bottom = 548.0
+theme = ExtResource("2_0hg1y")
+theme_override_fonts/normal_font = SubResource("FontVariation_q2o7f")
+text = "__________"
+fit_content = true
+metadata/_edit_use_anchors_ = true
+
+[node name="Message" type="RichTextLabel" parent="."]
+offset_left = 543.0
+offset_top = 293.0
+offset_right = 999.0
+offset_bottom = 356.0
+theme = ExtResource("2_0hg1y")
+text = "Continuar? S/N"
+fit_content = true
+metadata/_edit_use_anchors_ = true
+
+[node name="Score" type="RichTextLabel" parent="."]
+offset_left = 27.0
+offset_top = 29.0
+offset_right = 483.0
+offset_bottom = 73.0
+theme = ExtResource("2_0hg1y")
+text = "Pontuação: 00"
+fit_content = true
+metadata/_edit_use_anchors_ = true
+
+[node name="MaxScore" type="RichTextLabel" parent="."]
+offset_left = 27.0
+offset_top = 73.0
+offset_right = 483.0
+offset_bottom = 138.0
+theme = ExtResource("2_0hg1y")
+text = "Pontuação máxima: 00"
+fit_content = true
+metadata/_edit_use_anchors_ = true
+
+[node name="Hand" type="Sprite2D" parent="."]
+modulate = Color(0.91, 0.561167, 0, 1)
+position = Vector2(259, 515)
+scale = Vector2(5.13415, 5.13415)
+texture = ExtResource("4_nkc6w")
+hframes = 6
+script = ExtResource("5_rjpcq")
+
+[node name="Alphabet" type="AudioStreamPlayer" parent="."]
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Alphabet"]
+root_node = NodePath("../..")
+libraries = {
+"": SubResource("AnimationLibrary_nn366")
+}
+
+[node name="Label5" type="Label" parent="Alphabet/AnimationPlayer"]
+offset_left = 825.0
+offset_top = 13.0
+offset_right = 1370.0
+offset_bottom = 34.0
+theme = ExtResource("2_0hg1y")
+text = "ESC >> Menu principal"
+
+[node name="SoundFx" type="AudioStreamPlayer" parent="."]
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="SoundFx"]
+root_node = NodePath("../..")
+libraries = {
+"": SubResource("AnimationLibrary_a48wi")
+}

@@ -1,0 +1,48 @@
+[gd_resource type="Theme" load_steps=9 format=3 uid="uid://7nmkpj0rkrw5"]
+
+[ext_resource type="FontFile" uid="uid://bdgseehtscjxr" path="res://Assets/ari_w9500/ari-w9500-bold.ttf" id="1_6o8lc"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_1w8qg"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_f01xa"]
+content_margin_left = 10.0
+content_margin_top = 10.0
+content_margin_right = 10.0
+content_margin_bottom = 10.0
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_hj1wt"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_rcttx"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_66ovw"]
+bg_color = Color(1, 0.616667, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ka74g"]
+bg_color = Color(1, 1, 1, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_uijhk"]
+content_margin_left = 4.0
+content_margin_top = 4.0
+content_margin_right = 4.0
+content_margin_bottom = 4.0
+bg_color = Color(0.3, 0.185, 0, 1)
+corner_detail = 1
+
+[resource]
+default_font = ExtResource("1_6o8lc")
+Button/colors/font_color = Color(0.3, 0.185, 0, 1)
+Button/colors/font_focus_color = Color(1, 0.616667, 0, 1)
+Button/colors/font_pressed_color = Color(1, 1, 1, 1)
+Button/colors/icon_focus_color = Color(1, 0.615686, 0, 1)
+Button/colors/icon_normal_color = Color(0.301961, 0.184314, 0, 1)
+Button/colors/icon_pressed_color = Color(1, 1, 1, 1)
+Button/styles/focus = SubResource("StyleBoxEmpty_1w8qg")
+Button/styles/normal = SubResource("StyleBoxEmpty_f01xa")
+Button/styles/pressed = SubResource("StyleBoxEmpty_hj1wt")
+HSeparator/styles/separator = SubResource("StyleBoxEmpty_rcttx")
+HSlider/styles/grabber_area = SubResource("StyleBoxFlat_66ovw")
+HSlider/styles/grabber_area_highlight = SubResource("StyleBoxFlat_ka74g")
+HSlider/styles/slider = SubResource("StyleBoxFlat_uijhk")
+Label/colors/font_color = Color(1, 0.616667, 0, 1)
+RichTextLabel/colors/default_color = Color(0.909804, 0.560784, 0, 1)
+RichTextLabel/font_sizes/normal_font_size = 30

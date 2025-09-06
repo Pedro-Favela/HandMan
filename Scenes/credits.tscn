@@ -1,0 +1,86 @@
+[gd_scene load_steps=5 format=3 uid="uid://ctqkr73f2u2sm"]
+
+[ext_resource type="Theme" uid="uid://7nmkpj0rkrw5" path="res://Assets/MainTheme.tres" id="1_v7fk0"]
+[ext_resource type="Script" path="res://Scripts/credits.gd" id="1_wahgk"]
+[ext_resource type="Texture2D" uid="uid://bhu1rf0khbbqm" path="res://Assets/GithubLogo.png" id="2_gsu2c"]
+[ext_resource type="Texture2D" uid="uid://bof4hnew3qf0a" path="res://Assets/LinkedInLogo.png" id="3_n6hx2"]
+
+[node name="Credits" type="Node2D"]
+script = ExtResource("1_wahgk")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+offset_top = 37.0
+offset_right = 1016.0
+offset_bottom = 240.0
+theme = ExtResource("1_v7fk0")
+theme_override_font_sizes/normal_font_size = 23
+bbcode_enabled = true
+text = "[center]Jogo criado como um meio de estudo, por mim, [wave] Pedro Favela[/wave].
+Me diverti muito produzindo esse jogo, por mais simples que ele seja e espero consiguir criar muitos outros,
+
+Obrigado por tirar um tempo pra testar meu simples jogo, espero que tenha se divertindo jogando tanto quanto eu me diverti programando <3"
+
+[node name="Label" type="Label" parent="."]
+offset_left = 567.0
+offset_top = 519.0
+offset_right = 844.0
+offset_bottom = 542.0
+theme = ExtResource("1_v7fk0")
+text = "https://github.com/Pedro-Favela"
+
+[node name="Label2" type="Label" parent="."]
+offset_left = 169.0
+offset_top = 505.0
+offset_right = 477.0
+offset_bottom = 571.0
+theme = ExtResource("1_v7fk0")
+text = "https://linkedin.com/in/pedro-henrique-pereira-favela"
+horizontal_alignment = 1
+autowrap_mode = 3
+clip_text = true
+text_overrun_behavior = 4
+
+[node name="LinkedIn" type="Button" parent="."]
+offset_left = 197.0
+offset_top = 263.0
+offset_right = 281.0
+offset_bottom = 347.0
+scale = Vector2(3, 3)
+focus_neighbor_right = NodePath("../Github")
+focus_neighbor_bottom = NodePath("../Back")
+focus_next = NodePath("../Github")
+mouse_filter = 2
+theme = ExtResource("1_v7fk0")
+icon = ExtResource("3_n6hx2")
+flat = true
+icon_alignment = 1
+
+[node name="Github" type="Button" parent="."]
+offset_left = 586.0
+offset_top = 263.0
+offset_right = 670.0
+offset_bottom = 347.0
+scale = Vector2(3, 3)
+focus_neighbor_left = NodePath("../LinkedIn")
+focus_neighbor_right = NodePath("../Back")
+focus_neighbor_bottom = NodePath("../Back")
+focus_next = NodePath("../Back")
+focus_previous = NodePath("../LinkedIn")
+mouse_filter = 2
+theme = ExtResource("1_v7fk0")
+icon = ExtResource("2_gsu2c")
+flat = true
+icon_alignment = 1
+
+[node name="Back" type="Button" parent="."]
+offset_left = 312.0
+offset_top = 628.0
+offset_right = 708.0
+offset_bottom = 712.0
+focus_neighbor_left = NodePath("../Github")
+focus_neighbor_top = NodePath("../Github")
+focus_previous = NodePath("../Github")
+mouse_filter = 2
+theme = ExtResource("1_v7fk0")
+theme_override_font_sizes/font_size = 26
+text = "Voltar para o menu principal"

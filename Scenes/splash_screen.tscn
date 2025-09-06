@@ -1,0 +1,154 @@
+[gd_scene load_steps=7 format=3 uid="uid://dln6r7b8iq4ok"]
+
+[ext_resource type="Script" path="res://Scripts/splash_screen.gd" id="1_aanne"]
+[ext_resource type="Texture2D" uid="uid://bws25tnoshk0t" path="res://Assets/HoleInTheGroundLogo.png" id="1_dh8tm"]
+[ext_resource type="AudioStream" uid="uid://dkurvw0rbhowe" path="res://Assets/Audio/Thunder.wav" id="2_o4mg5"]
+
+[sub_resource type="Animation" id="Animation_wrpil"]
+resource_name = "SplashScreen"
+length = 7.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CanvasModulate:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2.03333, 2.23333, 5, 6.53333),
+"transitions": PackedFloat32Array(1, 10809.4, 0.933033, 4.75683, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 1), Color(0, 0, 0, 1), Color(1, 1, 1, 1), Color(0, 0, 0, 1), Color(0, 0, 0, 0)]
+}
+tracks/1/type = "audio"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Thunder")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("2_o4mg5")
+}],
+"times": PackedFloat32Array(0)
+}
+tracks/1/use_blend = true
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Thunder:volume_db")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 4.16667, 7.5),
+"transitions": PackedFloat32Array(0.965937, 5.46416, 1.56917),
+"update": 0,
+"values": [0.0, 0.0, -80.0]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("ColorRect:color")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 1.93333, 2.13333, 3.73333),
+"transitions": PackedFloat32Array(1, 18.3792, 1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 1), Color(0, 0, 0, 1), Color(0.31802, 0.31802, 0.31802, 1), Color(0, 0, 0, 1)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("HoleInTheGroundLogo:visible")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 5.13333),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+
+[sub_resource type="Animation" id="Animation_oblwn"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CanvasModulate:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0, 0, 0, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Thunder:volume_db")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("ColorRect:color")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0, 0, 0, 1)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("HoleInTheGroundLogo:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_uwyts"]
+_data = {
+"RESET": SubResource("Animation_oblwn"),
+"SplashScreen": SubResource("Animation_wrpil")
+}
+
+[node name="SplashScreen" type="Node2D"]
+script = ExtResource("1_aanne")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_right = 1026.0
+offset_bottom = 762.0
+color = Color(0, 0, 0, 1)
+
+[node name="HoleInTheGroundLogo" type="Sprite2D" parent="."]
+position = Vector2(517, 373)
+scale = Vector2(0.1425, 0.1425)
+texture = ExtResource("1_dh8tm")
+
+[node name="Thunder" type="AudioStreamPlayer" parent="."]
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_uwyts")
+}
+autoplay = "SplashScreen"
+
+[node name="CanvasModulate" type="CanvasModulate" parent="."]
+scale = Vector2(3.28063, 5.8109)
+color = Color(0, 0, 0, 1)

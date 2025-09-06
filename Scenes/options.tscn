@@ -1,0 +1,152 @@
+[gd_scene load_steps=8 format=3 uid="uid://iqf6pkjn0582"]
+
+[ext_resource type="Script" path="res://Scripts/options.gd" id="1_853mf"]
+[ext_resource type="Theme" uid="uid://7nmkpj0rkrw5" path="res://Assets/MainTheme.tres" id="1_goiea"]
+[ext_resource type="AudioStream" uid="uid://bdkpu4x1gnurq" path="res://Assets/Audio/Alphabet.wav" id="3_vp43e"]
+[ext_resource type="AudioStream" uid="uid://b8tjbeteaky4f" path="res://Assets/Audio/Death.wav" id="4_bm6us"]
+
+[sub_resource type="Animation" id="Animation_jsxw7"]
+resource_name = "VoiceTest"
+length = 0.2
+tracks/0/type = "audio"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"clips": [{
+"end_offset": 12.4636,
+"start_offset": 0.0,
+"stream": ExtResource("3_vp43e")
+}],
+"times": PackedFloat32Array(0.0333333)
+}
+tracks/0/use_blend = true
+
+[sub_resource type="Animation" id="Animation_2om03"]
+resource_name = "SoundFXTest"
+length = 0.2
+tracks/0/type = "audio"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("4_bm6us")
+}],
+"times": PackedFloat32Array(0)
+}
+tracks/0/use_blend = true
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_vejiw"]
+_data = {
+"SoundFXTest": SubResource("Animation_2om03"),
+"VoiceTest": SubResource("Animation_jsxw7")
+}
+
+[node name="Options" type="Node2D"]
+script = ExtResource("1_853mf")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 249.0
+offset_top = 46.0
+offset_right = 794.0
+offset_bottom = 715.0
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+
+[node name="Label" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("1_goiea")
+text = "Som geral >>"
+
+[node name="Master" type="HSlider" parent="VBoxContainer"]
+layout_mode = 2
+mouse_filter = 2
+theme = ExtResource("1_goiea")
+max_value = 1.0
+step = 0.05
+value = 1.0
+
+[node name="HSeparator" type="HSeparator" parent="VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("1_goiea")
+theme_override_constants/separation = 30
+
+[node name="Label2" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("1_goiea")
+text = "Efeitos sonoros >>"
+
+[node name="SoundFXs" type="HSlider" parent="VBoxContainer"]
+layout_mode = 2
+mouse_filter = 2
+theme = ExtResource("1_goiea")
+max_value = 1.0
+step = 0.05
+value = 1.0
+
+[node name="HSeparator2" type="HSeparator" parent="VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("1_goiea")
+theme_override_constants/separation = 30
+
+[node name="Label3" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("1_goiea")
+text = "Som de fundo >>"
+
+[node name="BackgroundNoise" type="HSlider" parent="VBoxContainer"]
+layout_mode = 2
+mouse_filter = 2
+theme = ExtResource("1_goiea")
+max_value = 1.0
+step = 0.05
+value = 1.0
+
+[node name="HSeparator3" type="HSeparator" parent="VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("1_goiea")
+theme_override_constants/separation = 30
+
+[node name="Label4" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("1_goiea")
+text = "Som da voz >>"
+
+[node name="Voice" type="HSlider" parent="VBoxContainer"]
+layout_mode = 2
+mouse_filter = 2
+theme = ExtResource("1_goiea")
+max_value = 1.0
+step = 0.05
+value = 1.0
+
+[node name="HSeparator4" type="HSeparator" parent="VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("1_goiea")
+theme_override_constants/separation = 30
+
+[node name="Button" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+mouse_filter = 2
+theme = ExtResource("1_goiea")
+text = "VOLTAR PARA O MENU PRINCIPAL"
+
+[node name="SoundTest" type="AudioStreamPlayer" parent="."]
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="SoundTest"]
+libraries = {
+"": SubResource("AnimationLibrary_vejiw")
+}
