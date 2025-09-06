@@ -16,9 +16,9 @@ theme = ExtResource("1_v7fk0")
 theme_override_font_sizes/normal_font_size = 23
 bbcode_enabled = true
 text = "[center]Jogo criado como um meio de estudo, por mim, [wave] Pedro Favela[/wave].
-Me diverti muito produzindo esse jogo, por mais simples que ele seja e espero consiguir criar muitos outros,
+Me diverti muito produzindo esse jogo, por mais simples que ele seja e espero conseguir criar muitos outros,
 
-Obrigado por tirar um tempo pra testar meu simples jogo, espero que tenha se divertindo jogando tanto quanto eu me diverti programando <3"
+Obrigado por tirar um tempo pra testar meu simples jogo, espero que tenha se divertido jogando tanto quanto eu me diverti programando <3"
 
 [node name="Label" type="Label" parent="."]
 offset_left = 567.0
