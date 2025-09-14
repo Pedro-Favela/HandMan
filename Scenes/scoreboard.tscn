@@ -1,0 +1,212 @@
+[gd_scene load_steps=3 format=3 uid="uid://dj5y4ku4jmwna"]
+
+[ext_resource type="Theme" uid="uid://7nmkpj0rkrw5" path="res://Assets/MainTheme.tres" id="1_ptfpi"]
+[ext_resource type="Script" path="res://Scripts/scoreboard.gd" id="1_xyf8y"]
+
+[node name="ScoreBoard" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_xyf8y")
+
+[node name="CenterContainer" type="CenterContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer"]
+layout_mode = 2
+theme_override_constants/separation = 40
+
+[node name="Title" type="Label" parent="CenterContainer/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("1_ptfpi")
+theme_override_font_sizes/font_size = 36
+text = "PLACAR DE PONTUAÇÃO"
+horizontal_alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CenterContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 65
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="RichTextLabel" parent="CenterContainer/VBoxContainer/HBoxContainer/VBoxContainer"]
+custom_minimum_size = Vector2(320, 0)
+layout_mode = 2
+theme = ExtResource("1_ptfpi")
+theme_override_font_sizes/normal_font_size = 23
+bbcode_enabled = true
+text = "[color=#fff]1[/color] DEUS [color=#4d2f00]..........................[/color] 666"
+fit_content = true
+scroll_active = false
+
+[node name="Label2" type="RichTextLabel" parent="CenterContainer/VBoxContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("1_ptfpi")
+theme_override_font_sizes/normal_font_size = 23
+bbcode_enabled = true
+text = "000 [color=#4d2f00]..........................[/color] 000"
+fit_content = true
+
+[node name="Label3" type="RichTextLabel" parent="CenterContainer/VBoxContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("1_ptfpi")
+theme_override_font_sizes/normal_font_size = 23
+bbcode_enabled = true
+text = "000 [color=#4d2f00]..........................[/color] 000"
+fit_content = true
+
+[node name="Label4" type="RichTextLabel" parent="CenterContainer/VBoxContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("1_ptfpi")
+theme_override_font_sizes/normal_font_size = 23
+bbcode_enabled = true
+text = "000 [color=#4d2f00]..........................[/color] 000"
+fit_content = true
+
+[node name="Label5" type="RichTextLabel" parent="CenterContainer/VBoxContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("1_ptfpi")
+theme_override_font_sizes/normal_font_size = 23
+bbcode_enabled = true
+text = "000 [color=#4d2f00]..........................[/color] 000"
+fit_content = true
+
+[node name="Label6" type="RichTextLabel" parent="CenterContainer/VBoxContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("1_ptfpi")
+theme_override_font_sizes/normal_font_size = 23
+bbcode_enabled = true
+text = "000 [color=#4d2f00]..........................[/color] 000"
+fit_content = true
+
+[node name="Label7" type="RichTextLabel" parent="CenterContainer/VBoxContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("1_ptfpi")
+theme_override_font_sizes/normal_font_size = 23
+bbcode_enabled = true
+text = "000 [color=#4d2f00]..........................[/color] 000"
+fit_content = true
+
+[node name="Label8" type="RichTextLabel" parent="CenterContainer/VBoxContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("1_ptfpi")
+theme_override_font_sizes/normal_font_size = 23
+bbcode_enabled = true
+text = "000 [color=#4d2f00]..........................[/color] 000"
+fit_content = true
+
+[node name="Label9" type="RichTextLabel" parent="CenterContainer/VBoxContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("1_ptfpi")
+theme_override_font_sizes/normal_font_size = 23
+bbcode_enabled = true
+text = "000 [color=#4d2f00]..........................[/color] 000"
+fit_content = true
+
+[node name="Label10" type="RichTextLabel" parent="CenterContainer/VBoxContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("1_ptfpi")
+theme_override_font_sizes/normal_font_size = 23
+bbcode_enabled = true
+text = "000 [color=#4d2f00]..........................[/color] 000"
+fit_content = true
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="CenterContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="RichTextLabel" parent="CenterContainer/VBoxContainer/HBoxContainer/VBoxContainer2"]
+custom_minimum_size = Vector2(320, 0)
+layout_mode = 2
+theme = ExtResource("1_ptfpi")
+theme_override_font_sizes/normal_font_size = 23
+bbcode_enabled = true
+text = "000 [color=#4d2f00]..........................[/color] 000"
+fit_content = true
+
+[node name="Label2" type="RichTextLabel" parent="CenterContainer/VBoxContainer/HBoxContainer/VBoxContainer2"]
+layout_mode = 2
+theme = ExtResource("1_ptfpi")
+theme_override_font_sizes/normal_font_size = 23
+bbcode_enabled = true
+text = "000 [color=#4d2f00]..........................[/color] 000"
+fit_content = true
+
+[node name="Label3" type="RichTextLabel" parent="CenterContainer/VBoxContainer/HBoxContainer/VBoxContainer2"]
+layout_mode = 2
+theme = ExtResource("1_ptfpi")
+theme_override_font_sizes/normal_font_size = 23
+bbcode_enabled = true
+text = "000 [color=#4d2f00]..........................[/color] 000"
+fit_content = true
+
+[node name="Label4" type="RichTextLabel" parent="CenterContainer/VBoxContainer/HBoxContainer/VBoxContainer2"]
+layout_mode = 2
+theme = ExtResource("1_ptfpi")
+theme_override_font_sizes/normal_font_size = 23
+bbcode_enabled = true
+text = "000 [color=#4d2f00]..........................[/color] 000"
+fit_content = true
+
+[node name="Label5" type="RichTextLabel" parent="CenterContainer/VBoxContainer/HBoxContainer/VBoxContainer2"]
+layout_mode = 2
+theme = ExtResource("1_ptfpi")
+theme_override_font_sizes/normal_font_size = 23
+bbcode_enabled = true
+text = "000 [color=#4d2f00]..........................[/color] 000"
+fit_content = true
+
+[node name="Label6" type="RichTextLabel" parent="CenterContainer/VBoxContainer/HBoxContainer/VBoxContainer2"]
+layout_mode = 2
+theme = ExtResource("1_ptfpi")
+theme_override_font_sizes/normal_font_size = 23
+bbcode_enabled = true
+text = "000 [color=#4d2f00]..........................[/color] 000"
+fit_content = true
+
+[node name="Label7" type="RichTextLabel" parent="CenterContainer/VBoxContainer/HBoxContainer/VBoxContainer2"]
+layout_mode = 2
+theme = ExtResource("1_ptfpi")
+theme_override_font_sizes/normal_font_size = 23
+bbcode_enabled = true
+text = "000 [color=#4d2f00]..........................[/color] 000"
+fit_content = true
+
+[node name="Label8" type="RichTextLabel" parent="CenterContainer/VBoxContainer/HBoxContainer/VBoxContainer2"]
+layout_mode = 2
+theme = ExtResource("1_ptfpi")
+theme_override_font_sizes/normal_font_size = 23
+bbcode_enabled = true
+text = "000 [color=#4d2f00]..........................[/color] 000"
+fit_content = true
+
+[node name="Label9" type="RichTextLabel" parent="CenterContainer/VBoxContainer/HBoxContainer/VBoxContainer2"]
+layout_mode = 2
+theme = ExtResource("1_ptfpi")
+theme_override_font_sizes/normal_font_size = 23
+bbcode_enabled = true
+text = "000 [color=#4d2f00]..........................[/color] 000"
+fit_content = true
+
+[node name="Label10" type="RichTextLabel" parent="CenterContainer/VBoxContainer/HBoxContainer/VBoxContainer2"]
+layout_mode = 2
+theme = ExtResource("1_ptfpi")
+theme_override_font_sizes/normal_font_size = 23
+bbcode_enabled = true
+text = "000 [color=#4d2f00]..........................[/color] 000"
+fit_content = true
+
+[node name="Button" type="Button" parent="CenterContainer/VBoxContainer"]
+layout_mode = 2
+mouse_filter = 2
+theme = ExtResource("1_ptfpi")
+theme_override_font_sizes/font_size = 26
+text = "VOLTAR PARA O MENU"

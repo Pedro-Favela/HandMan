@@ -9,6 +9,8 @@ func btn_pressed(btn_name:String) -> void:
 	match(btn_name):
 		"PLAY":
 			get_tree().change_scene_to_file("res://Scenes/main.tscn")
+		"SCOREBOARD":
+			get_tree().change_scene_to_file("res://Scenes/scoreboard.tscn")
 		"OPTIONS":
 			get_tree().change_scene_to_file("res://Scenes/options.tscn")
 		"CREDITS":

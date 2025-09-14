@@ -1,24 +1,33 @@
 extends Node2D
 
-const SAVE_PATH = "user://save.json"
+const SAVE_PATH:String = "user://save.json"
+var HighScoreTable: Array = [
+	{
+		"name": "DEUS",
+		"score": 666
+	}
+]:
+	set(new_value):
+		HighScoreTable = new_value
+		HighScoreTable.sort_custom(func(a,b): return a["score"]>b["score"])
+		if HighScoreTable.size() > 20:
+			HighScoreTable.pop_back()
 
 func _ready() -> void:
 	get_viewport().connect("gui_focus_changed",FocusChanged)
+	if LoadGame():
+		HighScoreTable = LoadGame()
+	
 
-func FocusChanged(node: Control):
+func FocusChanged(_node: Control):
 	$SoundFX.play()
 
-func SaveGame(MaxScore: int):
-	
-	var SaveData = {
-		"MaxScore": MaxScore,
-	}
-	
+func SaveGame():
 	var file = FileAccess.open_encrypted_with_pass(SAVE_PATH, FileAccess.WRITE, "PURGATÓRIO")
 	if file == null:
 		print("Error opening file: ", FileAccess.get_open_error())
 		return
-	var json_string = JSON.stringify(SaveData, "\t")
+	var json_string = JSON.stringify(HighScoreTable, "\t")
 	file.store_string(json_string)
 	file.close()
 

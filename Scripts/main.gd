@@ -42,46 +42,41 @@ var Score: int = 0:
 	set(new_value):
 		Score = new_value
 		$Score.text = "Pontuação: " + str(Score)
-		if Score >= MaxScore:
-			MaxScore = Score
-var MaxScore: int = 0:
-	set(new_value):
-		MaxScore = new_value
-		$MaxScore.text = "Pontuação máxima: " + str(MaxScore)
+
+var HighScoreName:String = ""
 
 enum {
 	PLAYING,
 	WON,
 	LOST,
-	AREYOUSURE
+	AREYOUSURE,
+	HIGHSCORE
 }
 
 var GameState: int = 0
 
 func _ready() -> void:
 	randomize()
-	if Global.LoadGame():
-		MaxScore = Global.LoadGame().MaxScore
 	GetRandomWord()
 
 func _input(event: InputEvent) -> void:
 	if event is InputEventKey:
 		if !event.is_pressed() or event.is_echo():
 			return
-		if !event.keycode in range(KEY_A,KEY_Z + 1) and !event.keycode == KEY_ESCAPE:
+		if !event.keycode in range(KEY_A,KEY_Z + 1) and !event.keycode == KEY_ESCAPE and !InputMap.action_has_event("ui_accept",event):
 			return
 		match GameState:
 			WON:
-				if event.keycode == KEY_S:
+				if event.keycode == KEY_S or InputMap.action_has_event("ui_accept",event):
 					AlphabetPlayer.play("S")
 					GetRandomWord()
 					return
 				elif event.keycode == KEY_N:
 					AlphabetPlayer.play("N")
-					ReturnToMenu()
+					GetPlayerHighScore()
 					return
 			LOST:
-				if event.keycode == KEY_S:
+				if event.keycode == KEY_S or InputMap.action_has_event("ui_accept",event):
 					AlphabetPlayer.play("S")
 					ResetGame()
 					return
@@ -95,10 +90,12 @@ func _input(event: InputEvent) -> void:
 					AlphabetPlayer.play("AreYouSure")
 					GameState = AREYOUSURE
 					return
+				if InputMap.action_has_event("ui_accept",event):
+					return
 				var letter = event.as_text_keycode().to_upper()
 				GuessLetter(letter)
 			AREYOUSURE:
-				if event.keycode == KEY_S:
+				if event.keycode == KEY_S or InputMap.action_has_event("ui_accept",event):
 					AlphabetPlayer.play("S")
 					ReturnToMenu()
 					return
@@ -106,6 +103,29 @@ func _input(event: InputEvent) -> void:
 					$Message.hide()
 					GameState = PLAYING
 					return
+			HIGHSCORE:
+				if InputMap.action_has_event("ui_accept",event):
+					if HighScoreName.length() <= 0:
+						SoundFx.play("RepeatedLetter")
+						return
+					Global.HighScoreTable += [{
+						"name":HighScoreName,
+						"score":Score
+					}]
+					
+					if Chances <= 0:
+						ShowMessage("TentarNovamente? S/N")
+						GameState = LOST
+					else:
+						ReturnToMenu()
+					return
+				
+				if HighScoreName.length() >= 3:
+					HighScoreName = HighScoreName.erase(0) + event.as_text_keycode() 
+				else:
+					HighScoreName += event.as_text_keycode()
+				ShowMessage("Digite seu nome >> "+ HighScoreName)
+				
 
 func ResetGame():
 	Chances = 5
@@ -155,8 +175,10 @@ func GetRandomWord():
 	for n in SecretWord.length():
 		CurrentWord += "_"
 	Guesses = []
+	HighScoreName = ""
 	$Word.text = CurrentWord
 	$Message.hide()
+	$EscToMainMenu.show()
 	GameState = PLAYING
 
 func ShowMessage(Text:String):
@@ -164,14 +186,20 @@ func ShowMessage(Text:String):
 	$Message.show()
 
 func Win():
-	GameState = WON
 	ShowMessage("Continuar? S/N")
+	$EscToMainMenu.hide()
+	GameState = WON
 
 func Lose():
-	GameState = LOST
 	SoundFx.play("Death")
-	ShowMessage("Tentar novamente? S/N")
+	$EscToMainMenu.hide()
+	$Word.text = SecretWord
+	GetPlayerHighScore()
+
+func GetPlayerHighScore():
+	ShowMessage("Digite seu nome >> ")
+	GameState = HIGHSCORE
 
 func ReturnToMenu():
-	Global.SaveGame(MaxScore)
+	Global.SaveGame()
 	get_tree().change_scene_to_file("res://Scenes/menu.tscn")

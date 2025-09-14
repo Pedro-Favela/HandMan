@@ -5,25 +5,6 @@
 [ext_resource type="AudioStream" uid="uid://bdkpu4x1gnurq" path="res://Assets/Audio/Alphabet.wav" id="3_vp43e"]
 [ext_resource type="AudioStream" uid="uid://b8tjbeteaky4f" path="res://Assets/Audio/Death.wav" id="4_bm6us"]
 
-[sub_resource type="Animation" id="Animation_jsxw7"]
-resource_name = "VoiceTest"
-length = 0.2
-tracks/0/type = "audio"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"clips": [{
-"end_offset": 12.4636,
-"start_offset": 0.0,
-"stream": ExtResource("3_vp43e")
-}],
-"times": PackedFloat32Array(0.0333333)
-}
-tracks/0/use_blend = true
-
 [sub_resource type="Animation" id="Animation_2om03"]
 resource_name = "SoundFXTest"
 length = 0.2
@@ -40,6 +21,25 @@ tracks/0/keys = {
 "stream": ExtResource("4_bm6us")
 }],
 "times": PackedFloat32Array(0)
+}
+tracks/0/use_blend = true
+
+[sub_resource type="Animation" id="Animation_jsxw7"]
+resource_name = "VoiceTest"
+length = 0.2
+tracks/0/type = "audio"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"clips": [{
+"end_offset": 12.4636,
+"start_offset": 0.0,
+"stream": ExtResource("3_vp43e")
+}],
+"times": PackedFloat32Array(0.0333333)
 }
 tracks/0/use_blend = true
 

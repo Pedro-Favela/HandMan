@@ -19,6 +19,12 @@ mouse_filter = 2
 theme = ExtResource("1_fe1gi")
 text = "JOGAR"
 
+[node name="ScoreBoard" type="Button" parent="Buttons"]
+layout_mode = 2
+mouse_filter = 2
+theme = ExtResource("1_fe1gi")
+text = "PLACAR"
+
 [node name="Options" type="Button" parent="Buttons"]
 layout_mode = 2
 mouse_filter = 2

@@ -14,9 +14,6 @@ func _ready() -> void:
 			slider.value = db_to_linear(AudioServer.get_bus_volume_db(BusIndex))
 	$VBoxContainer/Button.connect("pressed", BackToMainMenu)
 
-func _process(delta: float) -> void:
-	pass
-
 func _input(event: InputEvent) -> void:
 	if event is InputEventKey:
 		if !event.is_pressed() or event.is_echo():
