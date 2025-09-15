@@ -1,5 +1,48 @@
 extends Node2D
 
+# avareza, luxúria, ira, gula, inveja e preguiça
+
+var Words: Array= [
+	{
+		"hint":"Pecado capital",
+		"words":[
+			"SOBERBA",
+			"ORGULHO",
+			"AVAREZA",
+			"LUXURIA",
+			"IRA",
+			"GULA",
+			"INVEJA",
+			"PREGUICA"
+		]
+	},
+	{
+		"hint":"Natureza humana",
+		"words":[
+			"PECAR",
+			"MATAR",
+			"MORRER",
+			"SOFRER",
+			"SURTAR",
+			"MENTIR"
+		]
+	},
+	{
+		"hint":"Estado da alma",
+		"words":[
+			"ANGUSTIA",
+			"CULPA",
+			"LOUCURA",
+			"VAZIO",
+			"REMORSO",
+			"DESESPERO",
+			"SOLIDAO",
+			"ARREPENDIMENTO",
+			"VICIO"
+		]
+	}
+]
+
 var WordList: Array = [
 	"DEUS",
 	"MORTE",
@@ -86,7 +129,7 @@ func _input(event: InputEvent) -> void:
 					return
 			PLAYING:
 				if event.keycode == KEY_ESCAPE:
-					ShowMessage("Você tem certeza que quer sair? S/N")
+					ShowMessage("Você tem certeza? S/N")
 					AlphabetPlayer.play("AreYouSure")
 					GameState = AREYOUSURE
 					return
@@ -97,7 +140,7 @@ func _input(event: InputEvent) -> void:
 			AREYOUSURE:
 				if event.keycode == KEY_S or InputMap.action_has_event("ui_accept",event):
 					AlphabetPlayer.play("S")
-					ReturnToMenu()
+					GetPlayerHighScore()
 					return
 				elif event.keycode == KEY_N:
 					$Message.hide()
@@ -105,7 +148,7 @@ func _input(event: InputEvent) -> void:
 					return
 			HIGHSCORE:
 				if InputMap.action_has_event("ui_accept",event):
-					if HighScoreName.length() <= 0:
+					if HighScoreName.length() < 3:
 						SoundFx.play("RepeatedLetter")
 						return
 					Global.HighScoreTable += [{
@@ -114,7 +157,7 @@ func _input(event: InputEvent) -> void:
 					}]
 					
 					if Chances <= 0:
-						ShowMessage("TentarNovamente? S/N")
+						ShowMessage("Tentar novamente? S/N")
 						GameState = LOST
 					else:
 						ReturnToMenu()
@@ -170,7 +213,10 @@ func LoseFinger():
 	$Hand.Fear += 1
 
 func GetRandomWord():
-	SecretWord = WordList.pick_random()
+	var Category = Words.pick_random()
+	SecretWord = Category.words.pick_random()
+	$Hint.text = "Dica: " + Category.hint
+	print(Category.hint+" >> "+SecretWord)
 	CurrentWord = ""
 	for n in SecretWord.length():
 		CurrentWord += "_"

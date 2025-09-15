@@ -657,6 +657,16 @@ text = "Pontuação: 00"
 fit_content = true
 metadata/_edit_use_anchors_ = true
 
+[node name="Hint" type="RichTextLabel" parent="."]
+offset_left = 543.0
+offset_top = 356.0
+offset_right = 999.0
+offset_bottom = 400.0
+theme = ExtResource("2_0hg1y")
+text = "Dica: "
+fit_content = true
+metadata/_edit_use_anchors_ = true
+
 [node name="EscToMainMenu" type="Label" parent="."]
 offset_left = 825.0
 offset_top = 13.0
