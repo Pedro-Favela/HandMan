@@ -18,5 +18,7 @@ O jogo é controlado inteiramente pelo teclado:
 
 O jogo não aceita caracteres especiais, isso inclui o **Ç** e acentuação, no lugar do **Ç** utilize a tecla **C**
 
+Você pode jogar esse game [aqui](https://gwalkerr.itch.io/handman)
+
 
 
